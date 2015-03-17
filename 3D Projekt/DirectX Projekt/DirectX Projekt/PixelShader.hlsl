@@ -21,8 +21,11 @@ struct VS_OUT
 
 float4 PS_main(VS_OUT input) : SV_Target
 {
+
 	float3 outputColor = float3(0.0f, 0.0f, 0.0f);
-	float3 diffuse = diffuseColor.xyz;
+		float3 diffuse = diffuseColor.xyz;
+
+
 	if (hasTexture == true)
 	{
 		diffuse = txDiffuse.Sample(sampAni, input.tex);
@@ -33,6 +36,4 @@ float4 PS_main(VS_OUT input) : SV_Target
 		return float4(float3(0.0f, 0.0f, 1.0f), 1.0f);
 	}
 	
-	
-
 }
